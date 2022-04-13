@@ -1,8 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import { FlatList } from "react-native";
 import { ListItem } from "react-native-elements";
 import { COLLEGES } from "../shared/colleges";
-
 
 class Directory extends Component {
     constructor(props) {
@@ -13,21 +12,24 @@ class Directory extends Component {
     }
 
     static NavigationOptions = {
-        title: "Colorado Colleges"
-    }
+        title: "Colorado Colleges",
+    };
 
     render() {
-        const { navigate } = this.props.navigation
+        const { navigate } = this.props.navigation;
         const renderDirectoryItem = ({ item }) => {
             return (
                 <ListItem
                     title={item.name}
-                    subtitle={item.description}
+                    subtitle={item.location}
                     leftAvatar={{ source: require("./images/csu.png") }}
+                    onPress={() =>
+                        navigate("CollegeInfo", { collegeId: item.id })
+                    }
                 />
             );
         };
-    
+
         return (
             <FlatList
                 data={this.state.colleges}
@@ -37,6 +39,5 @@ class Directory extends Component {
         );
     }
 }
-
 
 export default Directory;
