@@ -2,7 +2,7 @@ export const COLLEGES = [
     {
         id: 0,
         name: "Colorado State University",
-        image: "/components/images/CSU.jpeg",
+        image: require("../components/images/CSU.jpeg"),
         location: "Fort Collins, Colorado",
         featured: true,
         type: "public",
@@ -11,7 +11,7 @@ export const COLLEGES = [
     {
         id: 1,
         name: "University of Northern Colorado",
-        image: "/components/images/unc.jpg",
+        image: require("../components/images/unc.jpg"),
         location: "Greeley, Colorado",
         featured: false,
         type: "public",
@@ -20,7 +20,7 @@ export const COLLEGES = [
     {
         id: 2,
         name: "University of Colorado Boulder",
-        image: "/components/images/ucboulder.jpg",
+        image: require("../components/images/ucboulder.jpg"),
         location: "Boulder, Colorado",
         featured: false,
         type: "public",
@@ -29,7 +29,7 @@ export const COLLEGES = [
     {
         id: 3,
         name: "Metropolitan State University",
-        image: "/components/images/metro.jpg",
+        image: require("../components/images/metro.jpg"),
         location: "Denver, Colorado",
         featured: false,
         type: "public",
@@ -38,7 +38,7 @@ export const COLLEGES = [
     {
         id: 4,
         name: "University of Denver",
-        image: "/components/images/du.jpg",
+        image: require("../components/images/du.jpg"),
         location: "Denver, Colorado",
         featured: false,
         type: "private",
@@ -47,7 +47,7 @@ export const COLLEGES = [
     {
         id: 5,
         name: "Regis University",
-        image: "/components/images/regis.jpg",
+        image: require("../components/images/regis.jpg"),
         location: "Denver, Colorado",
         featured: false,
         type: "private",

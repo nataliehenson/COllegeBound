@@ -8,9 +8,11 @@ function RenderCollege({ college }) {
         return (
             <Card
                 featuredTitle={college.name}
-                image={require("./images/csu.png")}
+                image={college.image}
             >
-                <Text style={{ margin: 10 }}>{college.location}</Text>
+                <Text style={{ margin: 10 }}>{`Located in: ${college.location}`}</Text>
+                <Text style={{ margin: 10 }}>{`Type of University: ${college.type}`}</Text>
+                <Text style={{ margin: 10 }}>{college.description}</Text>
             </Card>
         );
     }
