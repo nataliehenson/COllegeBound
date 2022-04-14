@@ -39,9 +39,7 @@ class Home extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: "#FFF5EE",
-    },
+    container: {},
     card: {
         paddingTop: 50,
         margin: 20,
