@@ -32,7 +32,7 @@ const DirectoryNavigator = createStackNavigator(
         initialRouteName: "Directory",
         defaultNavigationOptions: {
             headerStyle: {
-                backgroundColor: "#FF4500",
+                backgroundColor: "#75896D",
             },
             headerTintColor: "#fff",
             headerTitleStyle: {
@@ -49,7 +49,7 @@ const HomeNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({ navigation }) => ({
             headerStyle: {
-                backgroundColor: "#FF4500",
+                backgroundColor: "#75896D",
             },
             headerTintColor: "#fff",
             headerTitleStyle: {
@@ -74,7 +74,7 @@ const FavoritesNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({ navigation }) => ({
             headerStyle: {
-                backgroundColor: "#FF4500",
+                backgroundColor: "#75896D",
             },
             headerTintColor: "#fff",
             headerTitleStyle: {
@@ -99,7 +99,7 @@ const AppliedNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({ navigation }) => ({
             headerStyle: {
-                backgroundColor: "#FF4500",
+                backgroundColor: "#75896D",
             },
             headerTintColor: "#fff",
             headerTitleStyle: {
@@ -205,7 +205,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     drawerHeader: {
-        backgroundColor: "#FF4500",
+        backgroundColor: "#75896D",
         alignItems: "center",
         flex: 1,
         flexDirection: "row",
