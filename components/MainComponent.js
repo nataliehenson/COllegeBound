@@ -107,7 +107,7 @@ const AppliedNavigator = createStackNavigator(
             },
             headerLeft: (
                 <Icon
-                    name="heart"
+                    name="check"
                     type="font-awesome"
                     iconStyle={styles.stackIcon}
                     onPress={() => navigation.toggleDrawer()}
@@ -168,7 +168,7 @@ const MainNavigator = createDrawerNavigator(
                 drawerLabel: "Colleges Applied To",
                 drawerIcon: ({ tintColor }) => (
                     <Icon
-                        name="heart"
+                        name="check"
                         type="font-awesome"
                         size={24}
                         color={tintColor}
