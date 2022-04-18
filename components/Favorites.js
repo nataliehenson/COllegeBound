@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Text, View, FlatList } from "react-native";
-import { ListItem } from "react-native-elements";
+import { Text, View, FlatList, ScrollView, } from "react-native";
+import { ListItem, Tile } from "react-native-elements";
 import { connect } from 'react-redux';
 import { baseUrl } from '../baseUrl';
 import { COLLEGES } from '../shared/colleges';
@@ -30,12 +30,16 @@ class Favorites extends Component {
       const { navigate } = this.props.navigation;
       const renderFavoriteItem = ({item}) => {
           return (
-              <ListItem
-                  title={item.name}
-                  subtitle={item.description}
-                  leftAvatar={{source: {uri: baseUrl + item.image}}}
-                  onPress={() => navigate('CollegeInfo', {collegeId: item.id})}
-              />
+            <ScrollView>
+            <Tile
+              onPress={() => navigate('CollegeInfo', {collegeId: item.id})}
+              title={item.name}
+              caption={item.description}
+              imageSrc={item.image}
+              featured
+              key={item}
+            />
+          </ScrollView>
           );
       };
 
