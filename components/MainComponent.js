@@ -11,6 +11,8 @@ import { createStackNavigator } from "react-navigation-stack";
 import { createDrawerNavigator } from "react-navigation-drawer";
 import { createAppContainer } from "react-navigation";
 
+
+
 const DirectoryNavigator = createStackNavigator(
     {
         Directory: {
@@ -228,4 +230,7 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Main;
+
+
+export default Main
+  
