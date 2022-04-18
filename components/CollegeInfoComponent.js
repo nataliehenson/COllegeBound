@@ -2,6 +2,18 @@ import React, {Component} from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { Card, Icon } from "react-native-elements";
 import { COLLEGES } from "../shared/colleges";
+import { connect } from 'react-redux';
+import { postFavorite } from '../redux/ActionCreators';
+
+const mapStateToProps = state => {
+  return {
+      favorites: state.favorites
+  };
+};
+
+const mapDispatchToProps = {
+  postFavorite: animalId => (postFavorite(animalId))
+};
 
 function RenderCollege(props) {
     const {college} = props;
@@ -38,12 +50,11 @@ class CollegeInfo extends Component {
       super(props);
       this.state = {
         colleges: COLLEGES,
-        favorite: false
       };
     }
 
-    markFavorite() {
-        this.setState({favorite: true});
+    markFavorite(collegeId) {
+      this.props.postFavorite(collegeId);
     }
   
   
@@ -66,8 +77,8 @@ class CollegeInfo extends Component {
          <RenderCollege 
               college={college}
               navigate = {navigate}
-              favorite={this.state.favorite}
-              markFavorite={() => this.markFavorite()}
+              favorite={this.props.favorites.includes(collegeId)}
+              markFavorite={() => this.markFavorite(collegeId)}
           />
          
       );
@@ -84,4 +95,4 @@ class CollegeInfo extends Component {
     },
 });
 
-export default CollegeInfo;
+export default connect(mapStateToProps, mapDispatchToProps)(CollegeInfo);;
