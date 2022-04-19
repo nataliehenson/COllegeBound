@@ -41,7 +41,7 @@ function RenderCollege(props) {
                                 console.log('Already set as a favorite') : props.markFavorite()}
                         />
                         <Icon
-                            name={props.applied ? 'check' : 'check-o'}
+                            name={props.applied ? 'check-square' : 'check-square-o'}
                             type='font-awesome'
                             color='#f50'
                             raised
