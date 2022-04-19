@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Text, View, FlatList, StyleSheet, Alert } from "react-native";
-import { ListItem, Tile } from "react-native-elements";
+import { ListItem, Tile, Card } from "react-native-elements";
 import { connect } from 'react-redux';
 import { baseUrl } from '../baseUrl';
 import { SwipeRow } from 'react-native-swipe-list-view';
@@ -67,14 +67,15 @@ class Favorites extends Component {
                     </TouchableOpacity>
                 </View>
                 <View>
-                  <Tile
+                  <Card
                     onPress={() => navigate('CollegeInfo', {collegeId: item.id})}
-                    title={item.name}
-                    caption={item.description}
-                    imageSrc={item.image}
-                    featured
-                    key={item}
-                  />
+                    featuredTitle={item.name}
+                    image={item.image}
+                   
+                  >
+                   <Text>{item.name}</Text>
+                   <Text>{item.location}</Text>
+                   </Card>
                 </View>
           </SwipeRow>
           );
@@ -107,7 +108,7 @@ const styles = StyleSheet.create({
   },
   deleteTouchable: {
       backgroundColor: 'red',
-      height: '100%',
+      height: '85%',
       justifyContent: 'center'
   },
   deleteText: {
