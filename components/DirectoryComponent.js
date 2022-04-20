@@ -22,7 +22,7 @@ class Directory extends Component {
                 <ListItem
                     title={item.name}
                     subtitle={item.location}
-                    leftAvatar={{ source: require("./images/csu.png") }}
+                    leftAvatar={{ source: item.image }}
                     onPress={() =>
                         navigate("CollegeInfo", { collegeId: item.id })
                     }
