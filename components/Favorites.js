@@ -82,7 +82,7 @@ class Favorites extends Component {
       };
 
       return (
-    <View>
+      <View>
         <View style={styles.header}>
           <Text style={styles.name}>My Favorite Colleges</Text>
         </View>
