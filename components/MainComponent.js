@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Platform, StyleSheet } from "react-native";
+import { View, Platform, StyleSheet, Text } from "react-native";
 import { Icon } from "react-native-elements";
 import Directory from "./DirectoryComponent";
 import Home from "./Home";
@@ -10,8 +10,9 @@ import Constants from "expo-constants";
 import { createStackNavigator } from "react-navigation-stack";
 import { createDrawerNavigator } from "react-navigation-drawer";
 import { createAppContainer } from "react-navigation";
+import { createMaterialBottomTabNavigator} from 'react-navigation-material-bottom-tabs';
 
-
+/*
 
 const DirectoryNavigator = createStackNavigator(
     {
@@ -231,6 +232,112 @@ const styles = StyleSheet.create({
 });
 
 
+*/
 
-export default Main
+class HomeScreen extends React.Component {
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text>Home</Text>
+            </View>
+        )
+    }
+}
+
+class FavoritesScreen extends React.Component {
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text>Favorites</Text>
+            </View>
+        )
+    }
+}
+class CollegeScreen extends React.Component {
+    render() {
+        return (
+            <View>
+                <Directory/>
+            </View>
+           /* <View style={styles.container}>
+                <Text>History</Text>
+            </View> */
+        )
+    }
+}
+
+class CheckListScreen extends React.Component {
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text>Applied</Text>
+            </View>
+        )
+    }
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1, 
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
+})
+
+const TabNavigator = createMaterialBottomTabNavigator(
+    {
+        Home: {
+            screen: Home,
+            navigationOptions: {
+                tabBarIcon: ({ tintColor }) => (
+                    <View>
+                        <Icon size={25} name={"home"} color="white"/>
+                    </View>
+                )
+            }
+        },
+
+        Colleges: {
+            screen: Directory,
+            navigationOptions: {
+                tabBarIcon: ({ tintColor }) => (
+                    <View>
+                        <Icon size={25} name="school" color="white"/>
+                    </View>
+                )
+            }
+        },
+        Favorites: {
+            screen: Favorites,
+            navigationOptions: {
+                tabBarIcon: ({ tintColor }) => (
+                    <View>
+                        <Icon size={25} name="person" color="white"/>
+                    </View>
+                )
+            }
+        },
+        
+        Applied: {
+            screen: Applied,
+            navigationOptions: {
+                tabBarIcon: ({ tintColor }) => (
+                    <View>
+                        <Icon size={25} name="check" color="white"/>
+                    </View>
+                )
+            }
+        },
+    },
+    {
+        initialRouteName: 'Home',
+        activeColor: '#fff',
+        inactiveColor: '#3e2465',
+        barStyle: { backgroundColor: '#75896D'}
+    }
+
+)
+
+//export default Main
   
+export default createAppContainer(TabNavigator);
