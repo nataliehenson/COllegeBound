@@ -259,9 +259,18 @@ class CollegeScreen extends React.Component {
             <View>
                 <Directory/>
             </View>
-           /* <View style={styles.container}>
-                <Text>History</Text>
-            </View> */
+        )
+    }
+}
+
+class CollegeInfoScreen extends React.Component {
+   
+    render() {
+        return (
+            
+            <View>
+               <CollegeInfo/>
+            </View>
         )
     }
 }
@@ -307,6 +316,14 @@ const TabNavigator = createMaterialBottomTabNavigator(
                 )
             }
         },
+
+        CollegeInfo: {
+            screen: CollegeInfo, 
+            initialRouteName: "Directory"
+           
+        },
+        
+
         Favorites: {
             screen: Favorites,
             navigationOptions: {
