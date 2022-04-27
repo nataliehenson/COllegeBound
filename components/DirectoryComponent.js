@@ -11,10 +11,9 @@ class Directory extends Component {
         };
     }
 
-    /*static NavigationOptions = {
+    static NavigationOptions = {
         title: "Colorado Colleges",
     };
-    */
 
     render() {
         const { navigate } = this.props.navigation;
@@ -35,7 +34,7 @@ class Directory extends Component {
             <View>
                 <View style={styles.header}>
                     <Text style={styles.name}>Colorado Colleges</Text>
-                </View> 
+                </View>
                 <FlatList
                     data={this.state.colleges}
                     renderItem={renderDirectoryItem}
@@ -46,16 +45,15 @@ class Directory extends Component {
     }
 }
 const styles = StyleSheet.create({
-
     name: {
-      fontSize: 30,
-      fontWeight: "bold",
-      color: "white",
+        fontSize: 30,
+        fontWeight: "bold",
+        color: "white",
     },
 
     body: {
         color: "black",
-        fontSize: 20, 
+        fontSize: 20,
         textAlign: "center",
         //paddingTop: 20
     },
@@ -66,8 +64,6 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         padding: 30,
         //paddingTop: 60
-
-    }, 
-
+    },
 });
 export default Directory;
