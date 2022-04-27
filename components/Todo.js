@@ -6,14 +6,14 @@ import { View, ScrollView, StyleSheet, Text } from "react-native";
 class Todo extends Component {
     render() {
         return(
-            <>
+            <View>
                 <View style={styles.header}>
                     <Text style={styles.name}>To-Do</Text>
                 </View>
                 <ScrollView>
                     <Text style={styles.body}>Request Transcripts</Text>
                 </ScrollView>
-            </>
+            </View>
         )
     }
 }

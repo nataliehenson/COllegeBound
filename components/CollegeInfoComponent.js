@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import { Text, View, StyleSheet } from "react-native";
-import { Card, Icon } from "react-native-elements";
+import { Card, Icon, Tile } from "react-native-elements";
 import { COLLEGES } from "../shared/colleges";
 import { connect } from 'react-redux';
 import { postFavorite } from '../redux/ActionCreators';
@@ -23,7 +23,16 @@ function RenderCollege(props) {
   const { navigate } = props;
     if (college) {
         return (
-            <View>
+         /* <View>
+            <Tile 
+               title={college.name}
+               captionStyle={college.description}
+               imageSrc={college.image}
+               acceptance={college.acceptance}
+
+            /> 
+          </View> */
+            <View> 
                 <Card
                     featuredTitle={college.name}
                     image={college.image}>
@@ -51,7 +60,8 @@ function RenderCollege(props) {
                         />
                         </View>
                 </Card>
-            </View>
+                
+            </View> 
         );
     }
     return <View />;
@@ -114,4 +124,4 @@ class CollegeInfo extends Component {
     },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CollegeInfo);;
+export default connect(mapStateToProps, mapDispatchToProps)(CollegeInfo);
