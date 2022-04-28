@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import { Text, View, StyleSheet, ScrollView } from "react-native";
 import { Card, Icon, Tile } from "react-native-elements";
-import { COLLEGES } from "../shared/colleges";
 import { connect } from 'react-redux';
 import { postFavorite } from '../redux/ActionCreators';
 import { postApplied } from '../redux/ActionCreators';
@@ -17,6 +16,7 @@ const mapDispatchToProps = {
   postFavorite: collegeId => (postFavorite(collegeId)),
   postApplied: collegeId => (postApplied(collegeId))
 };
+
 
 function RenderCollege(props) {
     const {college} = props;
@@ -83,9 +83,7 @@ class CollegeInfo extends Component {
     markApplied(collegeId) {
       this.props.postApplied(collegeId);
     }
-  
-  
-  
+    
     static NavigationOptions = {
       title: "College Information",
     };
