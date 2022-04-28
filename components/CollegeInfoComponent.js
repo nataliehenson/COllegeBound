@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, ScrollView } from "react-native";
 import { Card, Icon, Tile } from "react-native-elements";
 import { COLLEGES } from "../shared/colleges";
 import { connect } from 'react-redux';
@@ -21,6 +21,8 @@ const mapDispatchToProps = {
 function RenderCollege(props) {
     const {college} = props;
   const { navigate } = props;
+
+  
     if (college) {
         return (
          /* <View>
@@ -57,10 +59,9 @@ function RenderCollege(props) {
                             reverse
                             onPress={() => props.applied ? 
                                 console.log('Already set as applied') : props.markApplied()}
-                        />
-                        </View>
-                </Card>
-                
+                        /> 
+                    </View>    
+                </Card>  
             </View> 
         );
     }
@@ -121,7 +122,8 @@ class CollegeInfo extends Component {
         flex: 1,
         flexDirection: 'row',
         margin: 30
-    },
+    }
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CollegeInfo);
