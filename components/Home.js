@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { View, Text, ScrollView, StyleSheet, Header } from "react-native";
 import { Card, Tile, Icon } from "react-native-elements";
 import { COLLEGES } from "../shared/colleges";
+import { TODOITEMS } from "../shared/todoitems";
 
 class Home extends Component {
     constructor(props) {
@@ -33,6 +34,12 @@ class Home extends Component {
                         clever tagline
                     </Text>
                 </View>
+                <View>
+                    <Text style={styles.text}>Tasks This Month</Text>
+                </View>
+                <View>
+                    <Text style={styles.text}>Find Outside Scholarships</Text>
+                </View>
             </ScrollView>
         );
     }
@@ -50,7 +57,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     text: {
-        fontSize: 30,
+        fontSize: 20,
         margin: 20,
         display: "flex",
         justifyContent: "center",
@@ -70,7 +77,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#75896D",
         alignItems: "center",
         justifyContent: "center",
-        paddingTop: 60
+        paddingTop: 60,
     },
 });
 

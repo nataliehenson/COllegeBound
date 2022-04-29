@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, StyleSheet, Text, FlatList } from "react-native";
-import { ListItem, ScrollView } from "react-native-elements";
+import { ListItem } from "react-native-elements";
 import { SwipeRow } from "react-native-swipe-list-view";
 import { TODOITEMS } from "../shared/todoitems";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -14,16 +14,37 @@ class Todo extends Component {
     }
 
     render() {
-        return(
+        const renderTodoItem = ({ item }) => {
+            return (
+                <SwipeRow rightOpenValue={-100} style={styles.swipeRow}>
+                    <View style={styles.completedView}>
+                        <TouchableOpacity style={styles.completedTouchable}>
+                            <Text style={styles.completedText}>Completed</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View>
+                        <ListItem
+                            title={item.name}
+                            subtitle={item.date}
+                            style={styles.todo}
+                        />
+                    </View>
+                </SwipeRow>
+            );
+        };
+
+        return (
             <View>
                 <View style={styles.header}>
                     <Text style={styles.name}>To-Do List</Text>
                 </View>
-                <ScrollView>
-                    <Text style={styles.body}>Request Transcripts</Text>
-                </ScrollView>
+                <FlatList
+                    data={this.state.todoitems}
+                    renderItem={renderTodoItem}
+                    keyExtractor={(item) => item.id.toString()}
+                />
             </View>
-        )
+        );
     }
 }
 

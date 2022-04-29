@@ -6,7 +6,11 @@ export const COLLEGES = [
         location: "Fort Collins, Colorado",
         featured: true,
         type: "public",
-        description: "words",
+        undergrads: "32,908",
+        acceptance: "83.5%",
+        averagegpa: "3.7",
+        topmajors:
+            "Human Development and Family Studies, Psychology, Kinesiology and Exercise Science",
     },
     {
         id: 1,
@@ -15,7 +19,10 @@ export const COLLEGES = [
         location: "Greeley, Colorado",
         featured: false,
         type: "public",
-        description: "words",
+        undergrads: "8,494",
+        acceptance: "87.7%",
+        averagegpa: "3.39",
+        topmajors: "Registered Nursing, Psychology, Elementary Education",
     },
     {
         id: 2,
@@ -24,7 +31,10 @@ export const COLLEGES = [
         location: "Boulder, Colorado",
         featured: false,
         type: "public",
-        description: "words",
+        undergrads: "30,300",
+        acceptance: "84.2%",
+        averagegpa: "3.66",
+        topmajors: "Business Administration, Psychology, Computer Science",
     },
     {
         id: 3,
@@ -33,7 +43,11 @@ export const COLLEGES = [
         location: "Denver, Colorado",
         featured: false,
         type: "public",
-        description: "words",
+        undergrads: "17,988",
+        acceptance: "83.3%",
+        averagegpa: "2.6",
+        topmajors:
+            "Biology, Research and Experimental Psychology, Multi-Interdisciplinary Studies",
     },
     {
         id: 4,
@@ -42,7 +56,11 @@ export const COLLEGES = [
         location: "Denver, Colorado",
         featured: false,
         type: "private",
-        description: "words",
+        undergrads: "12,000",
+        acceptance: "60.7%",
+        averagegpa: "3.72",
+        topmajors:
+            "Business, Management, and Marketing, Social Sciences, Psychology",
     },
     {
         id: 5,
@@ -51,6 +69,9 @@ export const COLLEGES = [
         location: "Denver, Colorado",
         featured: false,
         type: "private",
-        description: "words",
+        undergrads: "3,197",
+        acceptance: "78.2%",
+        averagegpa: "3.57",
+        topmajors: "Nursing, Business Administration, Computer Science",
     },
 ];
