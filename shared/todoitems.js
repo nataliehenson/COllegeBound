@@ -35,13 +35,13 @@ export const TODOITEMS = [
         date: "April",
     },
     {
-        id: 6,
+        id: 7,
         name: "Accept a School!",
         date: "May",
     },
     {
-        id: 7,
+        id: 8,
         name: "Start drafting Admissions Essay",
-        date: "5",
+        date: "May",
     },
 ];

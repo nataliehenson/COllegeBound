@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, View, Linking } from "react-native";
 import { ListItem } from "react-native-elements";
 import { COLLEGES } from "../shared/colleges";
 
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     },
 
     header: {
-        backgroundColor: "#75896D",
+        backgroundColor: "#012768",
         alignItems: "center",
         justifyContent: "center",
         padding: 30,

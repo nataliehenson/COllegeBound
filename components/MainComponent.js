@@ -26,7 +26,7 @@ const DirectoryNavigator = createStackNavigator(
         initialRouteName: "Directory",
         defaultNavigationOptions: {
             headerStyle: {
-                backgroundColor: "#75896D",
+                backgroundColor: "#012768",
             },
             headerTintColor: "#fff",
             headerTitleStyle: {
@@ -96,7 +96,7 @@ const TabNavigator = createMaterialBottomTabNavigator(
         initialRouteName: 'Home',
         activeColor: '#fff',
         inactiveColor: '#3e2465',
-        barStyle: { backgroundColor: '#75896D'}
+        barStyle: { backgroundColor: '#012768'}
     }
 
 )
