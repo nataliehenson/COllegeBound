@@ -31,7 +31,17 @@ export const TODOITEMS = [
     },
     {
         id: 6,
+        name: "Write Thank you Notes!",
+        date: "April",
+    },
+    {
+        id: 6,
         name: "Accept a School!",
         date: "May",
+    },
+    {
+        id: 7,
+        name: "Start drafting Admissions Essay",
+        date: "5",
     },
 ];
