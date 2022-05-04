@@ -6,7 +6,7 @@ import {
     StyleSheet,
     FlatList,
     Header,
-    Linking
+    Linking,
 } from "react-native";
 import { Card, Tile, Icon } from "react-native-elements";
 import { COLLEGES } from "../shared/colleges";
@@ -29,12 +29,10 @@ class Home extends Component {
         const { navigate } = this.props.navigation;
         const renderTodayTodo = ({ item }) => {
             return (
-
-                <View style={{flexDirection: 'row'}}>
-                    <Text>{'\u2022'}</Text>
+                <View style={{ flexDirection: "row" }}>
+                    <Text>{"\u2022"}</Text>
                     <Text style={styles.todoitem}>{item.name}</Text>
                 </View>
-               
             );
         };
 
@@ -53,20 +51,8 @@ class Home extends Component {
                 "November",
                 "December",
             ];
-            let days = [
-                "Sunday",
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-            ];
 
-            let day = days[d.getDay()];
-            let date = d.getDate();
             let month = months[d.getMonth()];
-            let year = d.getFullYear();
 
             return month;
         };
@@ -82,28 +68,20 @@ class Home extends Component {
                             color: "white",
                             fontWeight: "bold",
                         }}
-                    >
-                        clever tagline
-                    </Text>
+                    ></Text>
                 </View>
 
                 <View style={styles.container1}>
                     <View>
-                        <Text style={styles.month}>{dateBuilder(new Date())}</Text>
-                    </View>
-                    <View>
                         <Text style={styles.text}>Tasks This Month:</Text>
                         <FlatList
                             data={this.state.todoitems.filter(
-                                (todoitems) => todoitems.date == dateBuilder(new Date())
-                                //new Date().getMonth() + 1
+                                (todoitems) =>
+                                    todoitems.date == dateBuilder(new Date())
                             )}
-                            //currentMonth = new Date().getMonth() + 1
-                            //this.props.todoitems.includes(college.id)
                             renderItem={renderTodayTodo}
                             keyExtractor={(item) => item.id.toString()}
                         />
-                        
                     </View>
                     <View>
                         <Tile
@@ -116,14 +94,22 @@ class Home extends Component {
                         <Tile
                             title="Apply to Scholarships"
                             imageSrc={require("./images/scholarships.jpg")}
-                            onPress={() => Linking.openURL("https://bold.org/scholarships/")}
+                            onPress={() =>
+                                Linking.openURL(
+                                    "https://bold.org/scholarships/"
+                                )
+                            }
                         />
                     </View>
                     <View>
                         <Tile
                             title="What is FAFSA"
                             imageSrc={require("./images/fafsa.jpeg")}
-                            onPress={() => Linking.openURL("https://studentaid.gov/help/fafsa")}
+                            onPress={() =>
+                                Linking.openURL(
+                                    "https://studentaid.gov/help/fafsa"
+                                )
+                            }
                         />
                     </View>
                 </View>
@@ -135,8 +121,7 @@ class Home extends Component {
 const styles = StyleSheet.create({
     container: {},
     container1: {
-       margin: 10
-        
+        margin: 10,
     },
     card: {
         paddingTop: 50,
@@ -148,17 +133,19 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     text: {
-        fontSize: 30,
+        fontSize: 25,
         margin: 10,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        fontStyle: "italic"
     },
     tile: {
-        paddingBottom: 60,
+        //paddingBottom: 60,
         alignItems: "center",
         flex: 1,
+        borderColor: "black",
+        borderWidth: 5,
+        borderStyle: "solid",
     },
     name: {
         fontSize: 50,
@@ -171,21 +158,15 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         paddingTop: 60,
     },
-    month:{
-        fontSize: 40,
-        fontWeight: "bold",
-        marginVertical: 10,
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-    },
+
     todoitem: {
-        marginLeft: 5,
-        fontSize: 22,
-        paddingBottom: 5,
-        flex: 1, 
-      
-    }
+        marginLeft: 15,
+        fontSize: 20,
+
+        paddingLeft: 15,
+        flex: 1,
+        marginBottom: 15,
+    },
 });
 
 export default Home;
