@@ -30,7 +30,7 @@ class Home extends Component {
         const renderTodayTodo = ({ item }) => {
             return (
                 <View style={{ flexDirection: "row" }}>
-                    <Text>{"\u2022"}</Text>
+                    <Text>{"\u2023"}</Text>
                     <Text style={styles.todoitem}>{item.name}</Text>
                 </View>
             );
@@ -72,8 +72,10 @@ class Home extends Component {
                 </View>
 
                 <View style={styles.container1}>
-                    <View>
-                        <Text style={styles.text}>Tasks This Month:</Text>
+                    <Card 
+                        title= "Tasks for this month:"
+                        titleStyle= {{fontSize: 25}}
+                        containerStyle= {{marginBottom: 20}}>
                         <FlatList
                             data={this.state.todoitems.filter(
                                 (todoitems) =>
@@ -82,10 +84,12 @@ class Home extends Component {
                             renderItem={renderTodayTodo}
                             keyExtractor={(item) => item.id.toString()}
                         />
-                    </View>
+                    </Card>
                     <View>
                         <Tile
                             title="Colleges in Colorado"
+                            titleStyle={{backgroundColor: 'rgba(0,0,0,.4)', padding: 10, backgroundOpacity: .1}}
+                            featured
                             imageSrc={require("./images/coflag.png")}
                             onPress={() => navigate("Directory")}
                         />
@@ -93,6 +97,8 @@ class Home extends Component {
                     <View>
                         <Tile
                             title="Apply to Scholarships"
+                            featured
+                            titleStyle={{backgroundColor: 'rgba(0,0,0,.4)', padding: 10, backgroundOpacity: .1}}
                             imageSrc={require("./images/scholarships.jpg")}
                             onPress={() =>
                                 Linking.openURL(
@@ -103,7 +109,9 @@ class Home extends Component {
                     </View>
                     <View>
                         <Tile
-                            title="What is FAFSA"
+                            title="What is FAFSA?"
+                            featured
+                            titleStyle={{backgroundColor: 'rgba(0,0,0,.5)', padding: 10, backgroundOpacity: .1}}
                             imageSrc={require("./images/fafsa.jpeg")}
                             onPress={() =>
                                 Linking.openURL(
@@ -160,13 +168,14 @@ const styles = StyleSheet.create({
     },
 
     todoitem: {
-        marginLeft: 15,
+        marginLeft: 0,
         fontSize: 20,
 
-        paddingLeft: 15,
+        paddingLeft: 10,
         flex: 1,
         marginBottom: 15,
     },
+   
 });
 
 export default Home;
