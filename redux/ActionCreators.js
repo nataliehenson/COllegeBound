@@ -17,18 +17,5 @@ export const deleteFavorite = collegeId => ({
     payload: collegeId
 }); 
 
-export const postApplied = collegeId => dispatch => {
-    setTimeout(() => {
-        dispatch(addApplied(collegeId));
-    }, 200);
-};
+//new action creators for TODO
 
-export const addApplied = collegeId => ({
-    type: ActionTypes.ADD_APPLIED,
-    payload: collegeId
-});
-
-export const deleteApplied = collegeId => ({
-    type: ActionTypes.DELETE_APPLIED,
-    payload: collegeId
-}); 
