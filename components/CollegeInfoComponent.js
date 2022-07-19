@@ -3,19 +3,16 @@ import { Text, View, StyleSheet, ScrollView } from "react-native";
 import { Card, Icon, Tile } from "react-native-elements";
 import { connect } from "react-redux";
 import { postFavorite } from "../redux/ActionCreators";
-import { postApplied } from "../redux/ActionCreators";
 import { COLLEGES } from "../shared/colleges";
 
 const mapStateToProps = (state) => {
     return {
         favorites: state.favorites,
-        applied: state.applied,
     };
 };
 
 const mapDispatchToProps = {
     postFavorite: (collegeId) => postFavorite(collegeId),
-    postApplied: (collegeId) => postApplied(collegeId),
 };
 
 function RenderCollege(props) {
@@ -67,22 +64,6 @@ function RenderCollege(props) {
                                     : props.markFavorite()
                             }
                         />
-                        <Icon
-                            name={
-                                props.applied
-                                    ? "check-square"
-                                    : "check-square-o"
-                            }
-                            type="font-awesome"
-                            color="#f50"
-                            raised
-                            reverse
-                            onPress={() =>
-                                props.applied
-                                    ? console.log("Already set as applied")
-                                    : props.markApplied()
-                            }
-                        />
                     </View>
                 </Card>
             </View>
@@ -103,10 +84,6 @@ class CollegeInfo extends Component {
         this.props.postFavorite(collegeId);
     }
 
-    markApplied(collegeId) {
-        this.props.postApplied(collegeId);
-    }
-
     static NavigationOptions = {
         title: "College Information",
     };
@@ -123,9 +100,7 @@ class CollegeInfo extends Component {
                 college={college}
                 navigate={navigate}
                 favorite={this.props.favorites.includes(collegeId)}
-                applied={this.props.applied.includes(collegeId)}
                 markFavorite={() => this.markFavorite(collegeId)}
-                markApplied={() => this.markApplied(collegeId)}
             />
         );
     }
